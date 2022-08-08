@@ -1,0 +1,8 @@
+# Set some pyenv functions for this shell.
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
+
+# Supposed to tell pyenv to prepend venv name to the shell prompt.
+export PYENV_VIRTUALENV_DISABLE_PROMPT=0

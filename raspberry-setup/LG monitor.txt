@@ -1,0 +1,31 @@
+LG monitor does not work.  hdmi_safe=1 is needed.
+
+Available modes are:
+
+Group CEA has 14 modes:
+           mode 1: 640x480 @ 60Hz 4:3, clock:25MHz progressive 
+           mode 2: 720x480 @ 60Hz 4:3, clock:27MHz progressive 
+           mode 3: 720x480 @ 60Hz 16:9, clock:27MHz progressive 
+           mode 4: 1280x720 @ 60Hz 16:9, clock:74MHz progressive 
+  (native) mode 16: 1920x1080 @ 60Hz 16:9, clock:148MHz progressive 
+           mode 17: 720x576 @ 50Hz 4:3, clock:27MHz progressive 
+           mode 18: 720x576 @ 50Hz 16:9, clock:27MHz progressive 
+           mode 19: 1280x720 @ 50Hz 16:9, clock:74MHz progressive 
+           mode 31: 1920x1080 @ 50Hz 16:9, clock:148MHz progressive 
+           mode 32: 1920x1080 @ 24Hz 16:9, clock:74MHz progressive 
+           mode 34: 1920x1080 @ 30Hz 16:9, clock:74MHz progressive 
+           mode 93: 3840x2160 @ 24Hz 16:9, clock:297MHz progressive 
+           mode 94: 3840x2160 @ 25Hz 16:9, clock:297MHz progressive 
+           mode 95: 3840x2160 @ 30Hz 16:9, clock:297MHz progressive 
+
+
+
+Group DMT has 8 modes:
+  (prefer) mode 4: 640x480 @ 60Hz 4:3, clock:25MHz progressive 
+           mode 9: 800x600 @ 60Hz 4:3, clock:40MHz progressive 
+           mode 16: 1024x768 @ 60Hz 4:3, clock:65MHz progressive 
+           mode 28: 1280x800 @ 60Hz 16:10, clock:83MHz progressive 
+           mode 35: 1280x1024 @ 60Hz 5:4, clock:108MHz progressive 
+           mode 82: 1920x1080 @ 60Hz 16:9, clock:148MHz progressive 
+           mode 83: 1600x900 @ 60Hz 16:9, clock:108MHz progressive 
+           mode 85: 1280x720 @ 60Hz 16:9, clock:74MHz progressive 

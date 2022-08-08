@@ -1,0 +1,16 @@
+# Trying to prevent duplicate path entries on nested login shells with
+# the following variable test and set.  But this does not work.
+# if [[ -z $DOT_ZPROFILE_PATH_SET ]]; then
+# export DOT_ZPROFILE_PATH_SET=1
+
+# Set homebrew path
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Set pyenv home, add it to the path, then do a more sophisticated maniplation.
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
+# Add my own bin directory.
+export PATH=~/bin:$PATH
+
