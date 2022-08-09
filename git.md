@@ -1,5 +1,11 @@
 # How to use GIT
 
+# Set up to contribute to open source
+
+[Rose Judge recommends](https://github.com/readme/guides/configure-git-environment) 
+adding an "upstream" remote to track the main repository and a 
+branch that has latest main.  Your fork
+of that repository does not automatically receive updates from the main.  T
 
 # Squashing commits
 
