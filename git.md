@@ -1,3 +1,25 @@
+# How to use GIT
+
+
+# Squashing commits
+
+Best explained by [W3docs](https://www.w3docs.com/snippets/git/how-to-combine-multiple-commits-into-one-with-3-steps.html)
+
+Rebase to the start of the sequence you want to squash
+
+	git rebase -i HEAD~3
+
+After the first step, the editor window will show up offering you to input the command for each commit. All you need to do is replacing pick with squash, starting from the second line. Then, save the file.
+
+One more editor window will show up to change the resulting commit message. Here, you can find all your commit messages and change them according to your exact needs.
+
+You should run git push to add a new commit to the remote origin. If you have already pushed your commits, then you should force push them using the git push command with --force flag (suppose, the name of remote is origin, which is by default):
+
+	git push --force origin HEAD
+
+or --force-with-lease will not overwrite the work done on the remote branch in case other commits were attached.
+
+	git push --force-with-lease origin HEAD
 
 # GIT Submodules
 
