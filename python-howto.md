@@ -12,6 +12,9 @@
 
 ## pyenv
 
+`pyenv` has become my favored way to manage python on my personal computer and development systems.
+A little complex to set up, it then makes it easy to create, re-create, and swith environments.
+
 RealPython [instructions](https://realpython.com/intro-to-pyenv/).  Explains how to install.
 
 See `.pyenv/README.md` for details on how to set up your shell
@@ -22,6 +25,8 @@ Update with
     git pull
 
 ### pyenv-virtualenv
+
+I use this for virtual environtments.
 
 See the github [repository](https://github.com/pyenv/pyenv-virtualenv)
 
@@ -61,4 +66,35 @@ On Debian, must install python3-dev
 
 # VS Code
 
+## PYTHONPATH
+
+This is more complex that it should be.  I often have one or two library directories that need to be 
+available on the path.
+
+
+`settings.json` will give you the path in terminals.  Since the debugger is run from a terminal, this is where the 
+debugger gets the path.
+
+    "terminal.integrated.env.osx": {
+        "PYTHONPATH": "${workspaceRoot}/lib"	        
+    },
+    "terminal.integrated.env.linux": {
+        "PYTHONPATH": "${workspaceRoot}/lib"	        
+    }
+
+`.env` file.  
+
+    PYTHONPATH=lib
+
+
 Setting `python.analysis.extraPaths` tells pylance where to look for source code.
+
+
+# Message Queue
+
+## Libraries
+ 
+ * [kombu](https://docs.celeryq.dev/projects/kombu/en/latest/index.html) provides a high level interface.
+ * [amqp](https://pypi.org/project/amqp/) Pure python client alternate to librabbitmq.
+ * [librabbitmq](https://pypi.org/project/librabbitmq/) High performance interface to librabbit.
+
