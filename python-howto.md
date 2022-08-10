@@ -7,6 +7,14 @@
 
 [typing](https://mypy.readthedocs.io/en/latest/cheat_sheet_py3.html)
 
+# formatting
+
+For a long time I used tabs but the standard is spaces.  I surrender and am switching to spaces
+The following command will change all python files to space indentation
+
+    find . -name '*.py' ! -type d -exec bash -c 'expand -t 4 "$0" > /tmp/e && mv /tmp/e "$0"' {} \;
+
+
 
 # Python Version Management
 
