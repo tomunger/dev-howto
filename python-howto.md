@@ -98,3 +98,9 @@ Setting `python.analysis.extraPaths` tells pylance where to look for source code
  * [amqp](https://pypi.org/project/amqp/) Pure python client alternate to librabbitmq.
  * [librabbitmq](https://pypi.org/project/librabbitmq/) High performance interface to librabbit.
 
+
+# Tasks
+
+[Asynchronous Tasks With Django and Celery](https://realpython.com/asynchronous-tasks-with-django-and-celery/)
+
+includes how to use redis and how to use redis as the cellery broker and database back end.  How to use celery with django.
