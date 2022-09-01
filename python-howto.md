@@ -1,13 +1,13 @@
 # Learning
 
-[Chicago Python](https://www.chipy.org)
+[Chicago Python](https://www.chipy.org) has learning resources
 
 
 # Cheat Sheets
 
-[typing](https://mypy.readthedocs.io/en/latest/cheat_sheet_py3.html)
+mypy [typing hints](https://mypy.readthedocs.io/en/latest/cheat_sheet_py3.html)
 
-# formatting
+# Formatting
 
 For a long time I used tabs but the standard is spaces.  I surrender and am switching to spaces
 The following command will change all python files to space indentation
