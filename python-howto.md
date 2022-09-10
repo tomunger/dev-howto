@@ -97,6 +97,11 @@ debugger gets the path.
 
 Setting `python.analysis.extraPaths` tells pylance where to look for source code.
 
+# Profiling
+
+[RunSnakeRun](http://www.vrplumber.com/programming/runsnakerun/) provide a GUI that allows you to view (Python) `cProfile` or `Profile` profiler dumps in a sortable GUI view.  
+
+[kcachegrind](https://github.com/KDE/kcachegrind) a KDE GUI display of profilers.
 
 # Message Queue
 
@@ -112,3 +117,63 @@ Setting `python.analysis.extraPaths` tells pylance where to look for source code
 [Asynchronous Tasks With Django and Celery](https://realpython.com/asynchronous-tasks-with-django-and-celery/)
 
 includes how to use redis and how to use redis as the cellery broker and database back end.  How to use celery with django.
+
+# Framworks / Librarires
+
+James Bennett's [asyncio blog post](https://www.b-list.org/weblog/2022/aug/16/async/) (8/2022) lists several frameworks.
+
+
+## Database
+
+Python as a DB API specification in [PEP249](https://peps.python.org/pep-0249/).  As I understand, database drives implement this interface and provide the interface to various database servers.  This is a low level interface.  In theory, I think, you can change database by importing a different DBAPI driver.
+
+[Sql Server](https://docs.microsoft.com/en-us/sql/connect/python/pyodbc/python-sql-driver-pyodbc?view=sql-server-ver16) `pyodbc` is the driver for MS SQL Server and other ODBC.  Source on [GitHub](https://github.com/mkleehammer/pyodbc)
+
+[aiodbc](https://github.com/aio-libs/aioodbc) is an async ODBC driver that uses `pyodbc` and creates threads to manage async.
+
+On top of DBAPI drivers, several higher level frameworks provide a more abstract database interface.
+
+[SQLAlchemy](https://www.sqlalchemy.org/) - generally what people use for DB /ORM.
+
+[Databases Project](https://www.encode.io/databases/) Databases gives you simple asyncio support for a range of databases.  It allows you to make queries using the powerful SQLAlchemy Core expression language, and provides support for PostgreSQL, MySQL, and SQLite.
+
+[SQLModel](https://sqlmodel.tiangolo.com/) SQLModel, SQL databases in Python, designed for simplicity, compatibility, and robustness. Powered by Pydanic and SQLSlchemy.  Designe to simplify interacting with SQL database in FastAPI.
+
+*Why choose SQL Model over SQLAlchemy?*
+
+## Requests
+
+The [requests](https://requests.readthedocs.io/en/latest/) is the standard for making HTTP requests.  Requests recommends several packages:
+
+ * [CacheControl](https://cachecontrol.readthedocs.io/en/latest/) caching
+ * [Requests-Threads](https://github.com/requests/requests-threads) is a Requests session that returns the amazing Twisted’s awaitable Deferreds instead of Response objects. This allows the use of async/await keyword usage on Python 3, or Twisted’s style of programming, if desired.
+ * [Requests-Toolbelt](https://github.com/requests/requests-threads) is a collection of utilities that some users of Requests may desire, but do not belong in Requests proper. 
+ * [requests-oauthlib](https://requests-oauthlib.readthedocs.io/en/latest/) makes it possible to do the OAuth dance from Requests automatically. This is useful for the large number of websites that use OAuth to provide authentication. It also provides a lot of tweaks that handle ways that specific OAuth providers differ from the standard specifications.
+
+
+ * Certifi is a carefully curated collection of Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts. It has been extracted from the Requests project.
+
+[HTTPX](https://www.python-httpx.org/) HTTPX is a fully featured HTTP client for Python 3, which provides sync and async APIs, and support for both HTTP/1.1 and HTTP/2.  Mostly a drop in replacement for requests.
+
+## Caching general
+
+[dogpile](https://dogpilecache.sqlalchemy.org/en/latest/) provide threaded caching, including managing updates.
+
+
+## Web Servers
+
+A web framework needs to be run by a web server:
+
+[Gunicorn](https://gunicorn.org/) a WSGI HTTP server for unix.  
+
+ASGI server implementations, like [Daphne](https://github.com/django/daphne), [Hypercorn](https://gitlab.com/pgjones/hypercorn/), and [Uvicorn](https://www.uvicorn.org/).
+
+
+## API
+
+[FastAPI](https://fastapi.tiangolo.com/) is the web framework that seems to have the most interest/noise around it.
+
+
+[Starlette](https://www.starlette.io/) Starlette is a lightweight ASGI framework/toolkit, which is ideal for building async web services in Python.
+
+[Starlite](https://starlite-api.github.io/starlite/) Starlite is a light, opinionated and flexible ASGI API framework built on top of pydantic and Starlette.
