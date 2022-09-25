@@ -122,6 +122,18 @@ includes how to use redis and how to use redis as the cellery broker and databas
 
 James Bennett's [asyncio blog post](https://www.b-list.org/weblog/2022/aug/16/async/) (8/2022) lists several frameworks.
 
+## Libraries
+
+### attrs
+
+[Attrs module](https://www.attrs.org/en/stable/) provides much of the class writing boiler plate.  Lighter
+than pydantic, which is data validation.
+
+
+### pydantic
+
+[Pydantic module](https://pydantic-docs.helpmanual.io/) "provides data validation and settings management using pythong type annotations."
+
 
 ## Database
 
