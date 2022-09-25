@@ -55,6 +55,24 @@ Follow instructions to set up `.zprofile` and `.zshrc`
 
 Also install pyenv-virtualenv from [github](https://github.com/pyenv/pyenv-virtualenv)
 
+### Compiling
+
+`zlib` must be installed and added to the compile environment:
+
+"I went through the same issue and what did the trick for me was:
+
+(Re)install zlip:
+
+	brew reinstall zlib
+
+Set its path to some env vars so compilers and pkg-config can find zlib:
+
+	export LDFLAGS="-L/usr/local/opt/zlib/lib"
+	export CPPFLAGS="-I/usr/local/opt/zlib/include"
+	export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig"
+
+Build Python again.
+
 ## pandas
 
 
