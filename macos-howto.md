@@ -57,7 +57,11 @@ Also install pyenv-virtualenv from [github](https://github.com/pyenv/pyenv-virtu
 
 ### Compiling
 
-`zlib` must be installed and added to the compile environment:
+Configure the [build environment](https://github.com/pyenv/pyenv/wiki#suggested-build-environment)
+
+Details in pyenv [common build problems](https://github.com/pyenv/pyenv/wiki/Common-build-problems#error-the-python-ssl-extension-was-not-compiled-missing-the-openssl-lib)
+
+`zlib` must be installed and added to the compile environment
 
 "I went through the same issue and what did the trick for me was:
 
