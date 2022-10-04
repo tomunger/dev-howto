@@ -118,7 +118,7 @@ Setting `python.analysis.extraPaths` tells pylance where to look for source code
 
 includes how to use redis and how to use redis as the cellery broker and database back end.  How to use celery with django.
 
-# Framworks / Librarires
+# Frameworks / Libraries
 
 James Bennett's [asyncio blog post](https://www.b-list.org/weblog/2022/aug/16/async/) (8/2022) lists several frameworks.
 
