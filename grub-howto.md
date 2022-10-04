@@ -37,3 +37,4 @@ It appears two commands are needed:
     sudo update-grub
     sudo grub-install /dev/sdX
 
+use `mount` to find which disk the boot partition is on.
