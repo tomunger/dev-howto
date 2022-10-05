@@ -65,7 +65,7 @@ Details in pyenv [common build problems](https://github.com/pyenv/pyenv/wiki/Com
 
 "I went through the same issue and what did the trick for me was:
 
-(Re)install zlip:
+(Re)install zlib:
 
 	brew reinstall zlib
 
@@ -74,6 +74,20 @@ Set its path to some env vars so compilers and pkg-config can find zlib:
 	export LDFLAGS="-L/usr/local/opt/zlib/lib"
 	export CPPFLAGS="-I/usr/local/opt/zlib/include"
 	export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig"
+
+Or, as `brew` suggested:
+
+	export LDFLAGS="-L/opt/homebrew/opt/zlib/lib"
+	export CPPFLAGS="-I/opt/homebrew/opt/zlib/include"
+	export LDFLAGS="-L/opt/homebrew/opt/tcl-tk/lib"
+	export CPPFLAGS="-I/opt/homebrew/opt/tcl-tk/include"
+
+Combined, these are:
+
+	export LDFLAGS="-L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/tcl-tk/lib"
+	export CPPFLAGS="-I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/tcl-tk/include"
+
+HOWEVER, latest pyenv may be able to find these automatically.
 
 Build Python again.
 
