@@ -21,7 +21,7 @@ Data is stored in shards.  Each index starts with one shard.  Index may be confi
 
 All elastic [docs](https://www.elastic.co/guide/index.html)
 
-User [Guide](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
+Elastic search User [Guide](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
 
 Getting started [video](https://www.youtube.com/watch?v=VzZz6qJwYmY) https://www.elastic.co/webinars/getting-started-elasticsearch?msclkid=0f24a2e36d47171a9ca3c1ad84e25c5b&ultron=brand-sitelink&blade=adwords-s&Device=c&thor=elasticsearch&msclkid=0f24a2e36d47171a9ca3c1ad84e25c5b
 
@@ -29,10 +29,43 @@ Logging with the [ELK Stack](https://www.elastic.co/webinars/introduction-elk-st
 
 logging with the [python client](https://www.elastic.co/guide/en/elasticsearch/client/python-api/current/index.html)
 
+## Settings
+
+`elasticsearch.yml` contains most [configuration settings](https://www.elastic.co/guide/en/elasticsearch/reference/current/settings.html)
+
+`network.host`: must be set to allow remote connections
+
+[Security](https://www.elastic.co/guide/en/elasticsearch/reference/current/configuring-security.html) 
+are in `elasticsearch.yml`.
+
+
+
 
 Elastic community videos:
 
  * [Beginners crash course](https://www.youtube.com/watch?v=gS_nHTWZEJ8)
+
+# Install in Docker
+
+See the guides above
+
+See intg-core script to create the containers for development.
+
+Create the elastic search container
+
+Generate a token
+
+	docker exec -it elasticsearch //usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s kibana
+
+Open a web browser to http://localhost:5601.  It should ask for the token.
+
+Next it will ask for a verification code.  Generate this on kibana
+
+	docker exec -it kibana sh bin/kibana-verification-code
+	
+# CURL requests
+
+You may need to use `https`.  Also, may need to use `-k` to ignore certificate errors.
 
 
 
