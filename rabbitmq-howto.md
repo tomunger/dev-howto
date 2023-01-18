@@ -18,6 +18,8 @@ run
 
 See notes on [AMQP Transports](https://docs.celeryq.dev/projects/kombu/en/latest/userguide/connections.html)
 
+ * [pika](https://pypi.org/project/pika/)
  * [librabbitmq](https://pypi.org/project/librabbitmq/)
  * [kombu](https://docs.celeryq.dev/projects/kombu/en/latest/index.html)
  * [amqp](https://pypi.org/project/amqp/)
+ 
