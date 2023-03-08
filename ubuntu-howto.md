@@ -73,6 +73,10 @@ How to install docker desktop.  There are
     sudo apt-get update
     sudo apt-get install ~/Downloads/docker-desktop-4.17.0-amd64.deb
 
-Now you can run 
+4. Configure []`pass`](https://docs.docker.com/desktop/get-started/#credentials-management-for-linux-users)
+
+    gpg --generate-key
+
+Now you can run docker
 
 
