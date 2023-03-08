@@ -42,3 +42,37 @@ Install the recommended [dependencies](https://github.com/pyenv/pyenv/wiki#sugge
 
 
 
+# Docker
+
+## Desktop
+
+How to install docker desktop.  There are 
+
+ * Linux general [instructions](https://docs.docker.com/desktop/install/linux-install/)
+ * Ubuntu [specific instrucations](https://docs.docker.com/desktop/install/ubuntu/)
+
+1. Setup the [repository](https://docs.docker.com/engine/install/ubuntu/#set-up-the-repository)
+
+    sudo apt-get update
+    sudo apt-get install \
+        ca-certificates \
+        curl \
+        gnupg \
+        lsb-release
+    sudo mkdir -m 0755 -p /etc/apt/keyrings
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+    echo \
+    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+2. Download the latest DEB package
+
+3. Install the package (Note the update is necessary to fetch the list of docer packages configured above)
+    
+    sudo apt-get update
+    sudo apt-get install ~/Downloads/docker-desktop-4.17.0-amd64.deb
+
+Now you can run 
+
+
