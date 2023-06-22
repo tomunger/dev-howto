@@ -80,3 +80,16 @@ How to install docker desktop.  There are
 Now you can run docker
 
 
+# UFW Firewall
+
+The Uncomplicated Fire Wall
+
+Uncomplicated Fire Wall [tutorial](https://www.digitalocean.com/community/tutorials/ufw-essentials-common-firewall-rules-and-commands)
+
+    sudo ufw status
+    sudo ufw enable
+    sudo ufw disable
+
+    sudo ufw allow OpenSSH
+    sudo ufw allow 7200/tcp
+    sudo ufw allow 9980:9999/tcp
