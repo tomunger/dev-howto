@@ -10,16 +10,6 @@ Also
  * Configure to start on boot
 
 
-# useful images
-
-[Fake SMTP Server](https://hub.docker.com/r/reachfive/fake-smtp-server)
-
-
-Open speed test
-
-    sudo docker run --restart=unless-stopped --name=openspeedtest -d -p 80:8080 openspeedtest/latest
-    # Start from local, don't delete
-    sudo docker run -p 8080:8080 openspeedtest/latest
 
 # Commands
 
@@ -75,7 +65,7 @@ Attache to the main stdin, stdout, and stderr of a container
 
 Run a command in a container.  Here `bash` is run
 
-	docker container exec -it bash container_name
+	docker container exec -it  container_name bash
 
 
 
@@ -112,6 +102,11 @@ Some platform names:  amd64, arm32v5, arm32v6, arm32v7, arm64v8, i386, ppc64le, 
 
 [Fake SMTP Server](https://hub.docker.com/r/reachfive/fake-smtp-server)
 
+Open speed test
+
+    sudo docker run --restart=unless-stopped --name=openspeedtest -d -p 80:8080 openspeedtest/latest
+    # Start from local, don't delete
+    sudo docker run -p 8080:8080 openspeedtest/latest
 
 # Postgres
 
@@ -129,3 +124,84 @@ Pull container
 
 Runs the container named `pgadmin`.  Sets username and password.  Maps host port 5080 to container port 80 and 5443 to container port 443
     ?
+
+
+# Development and VS Code
+
+## Use a Debug Configuration to launch a container
+
+A debug configuration references a run task which references a build task which references a docker file.
+
+A Docker file defines
+
+Debug:
+
+        {
+            "name": "Docker: Python - General",
+            "type": "docker",
+            "request": "launch",
+            "preLaunchTask": "docker-run: debug",
+            "python": {
+                "pathMappings": [
+                    {
+                        "localRoot": "C:\\Users\\tunge\\Documents\\intg\\intg-core",
+                        "remoteRoot": "/app"
+                    }
+                ],
+                "projectType": "general"
+            }
+        } 
+
+Notes: 
+ * Rather than use ${workspaceFolder} in the pathMappings, I used full path.  Some discussion on the 
+web suggested this bypassed a bug.
+
+run:
+
+        {
+            "type": "docker-run",
+            "label": "docker-run: debug",
+            "dependsOn": [
+                "docker-build"
+            ],
+            "python": {
+                "file": "modules/mq_receive.py",
+                "args": [
+                    "-p",
+                    "CE_TO_CEN"
+                ]
+            },
+            "dockerRun": {
+                "envFiles": [
+                    "${workspaceFolder}/Dockerfile.env"
+                ],
+                "network": "devservices_default",
+                "volumes": [
+                    {
+                        "localPath": "${userHome}/Documents/intg/intg-configuration",
+                        "containerPath": "/config",
+                        "permissions": "ro"
+                    },
+                    {
+                        "localPath": "${userHome}/Documents/log",
+                        "containerPath": "/log",
+                        "permissions": "rw"
+                    }
+                ]
+            },
+        }
+
+
+Build:
+
+        {
+            "type": "docker-build",
+            "label": "docker-build",
+            "platform": "python",
+            "dockerBuild": {
+                "tag": "intgcore:latest",
+                "dockerfile": "${workspaceFolder}/Dockerfile",
+                "context": "${workspaceFolder}",
+                "pull": true
+            }
+        },
