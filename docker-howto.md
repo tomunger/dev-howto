@@ -65,9 +65,28 @@ Attache to the main stdin, stdout, and stderr of a container
 
 Run a command in a container.  Here `bash` is run
 
-	docker container exec -it  container_name bash
+	docker container exec -it container_name bash 
+
+ * `-it` for interactive
+ * `--rm` to remove after run
+ * 
 
 
+## Volumes
+
+### Copy and backup
+
+Docker says to use a container to [tar and un-tar](https://docs.docker.com/storage/volumes/)
+
+	from_vol=$1
+	to_vol=$2
+	transfer_image=ubuntu
+
+	set -x
+	docker volume create $from_vol
+	docker run --rm -v $from_vol:/source --mount type=bind,source=$(pwd),target=/backup $transfer_image bash -c "tar cvf /backup/$to_vol.tar /source"
+	docker run --rm -v $to_vol:/dest --mount type=bind,source=$(pwd),target=/backup $transfer_image bash -c "cd /dest && tar xvf /backup/$to_vol.tar --strip 1"
+	rm $to_vol.tar
 
 
 ## Building
