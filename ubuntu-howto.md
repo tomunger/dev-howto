@@ -1,6 +1,16 @@
 # Microsoft Remote
 
-Install `xrdp`
+As of version 22.04 RDP is the default.  However, the password is differant than the user password and gets reset
+on every reboot.  Find the password in Utilities > Passwords and Keys > GNOME Remote Desktop RDP.
+
+Solutions:
+
+ * [Change the keyring password to empty](https://askubuntu.com/questions/1403943/22-04-remote-desktop-sharing-authentication-password-changes-every-reboot)
+ * [Manual install of XRDP](https://askubuntu.com/questions/1407444/ubuntu-22-04-remote-desktop-headless).  However, this prevents
+simultanenous local and remote log in.
+ * At above also the solution of auto-login + run a script tha imports known password to the kiy ring.
+
+
 
 ## Authentication Required
 
