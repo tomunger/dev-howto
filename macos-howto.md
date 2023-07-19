@@ -27,17 +27,21 @@ install from [brew.sh].
 
 Installed in `/opt/homebrew`
 
-I have insetalled
-
 
 
 ## Useful Commands
 
+	brew list			# what is installed.
 	brew update			# update homebrew
 	brew outdated		# list outdated packages
 	brew upgrade		# upgrade all formulae
 	brew cleanup		# remove old versions
 	brew doctor			# check for problems
+
+Periodic update:
+
+	brew update
+	brew upgrade
 
 ## Useful Packages
 
@@ -61,28 +65,13 @@ Configure the [build environment](https://github.com/pyenv/pyenv/wiki#suggested-
 
 Details in pyenv [common build problems](https://github.com/pyenv/pyenv/wiki/Common-build-problems#error-the-python-ssl-extension-was-not-compiled-missing-the-openssl-lib)
 
-`zlib` must be installed and added to the compile environment
+`lmza` is in package `xz`.  If build reports that library is not found, try
 
-"I went through the same issue and what did the trick for me was:
+ * Reinstall `xz`
+ * Put `/opt/homebrew/bin` on the path
 
-(Re)install zlib:
-
-	brew reinstall zlib
-
-Set its path to some env vars so compilers and pkg-config can find zlib:
-
-	export LDFLAGS="-L/usr/local/opt/zlib/lib"
-	export CPPFLAGS="-I/usr/local/opt/zlib/include"
-	export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig"
-
-Or, as `brew` suggested:
-
-	export LDFLAGS="-L/opt/homebrew/opt/zlib/lib"
-	export CPPFLAGS="-I/opt/homebrew/opt/zlib/include"
-	export LDFLAGS="-L/opt/homebrew/opt/tcl-tk/lib"
-	export CPPFLAGS="-I/opt/homebrew/opt/tcl-tk/include"
-
-Combined, these are:
+Current pyenv seems to find libraries as needed.  Old method was to add flags identifying the
+library locations:
 
 	export LDFLAGS="-L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/tcl-tk/lib"
 	export CPPFLAGS="-I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/tcl-tk/include"
