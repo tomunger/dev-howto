@@ -23,3 +23,10 @@ Operations on keys can be made by piping the list to xargs redis-cli, such as
 
 -0 may help when there are spaces in the keys.  See [man xargs](https://www.man7.org/linux/man-pages/man1/xargs.1.html)
 
+# In a container
+
+See the official container [documentation](https://hub.docker.com/_/redis/)
+
+ * Run with persistant storage
+ * set log level
+ * 
