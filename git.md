@@ -52,3 +52,33 @@ Or do this when cloning main repo:
 To pull new changes in the sub-module, go into the directory and `pull` changes.  Or:
 
 	git submodule update --remote DbConnector
+
+
+# GITHUB deployment access to repositories
+
+To provide system access to a repository not using personal ssh keys one option is [repository deployment keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/managing-deploy-keys#deploy-keys).
+
+**1** Generate keys for each repository:
+
+	ssh-keygen -t ed25519 -C "IS-SET1 intg-configuration" -f is-set1-github-intg-configuration
+	ssh-keygen -t ed25519 -C "IS-SET1 intg-core" -f is-set1-github-intg-core
+
+**2** Create a `config` file mapping a made-up host name to each key:
+
+	Host github.com-intg-configuration
+		Hostname github.com
+		IdentityFile=/c/Users/Administrator/.ssh/is-set1-github-intg-configuration
+
+	Host github.com-intg-core
+		Hostname github.com
+		IdentityFile=/c/Users/Administrator/.ssh/is-set1-github-intg-core
+
+**3** Clone using the made-up host name (or change URL in existing repo):
+
+	# Show remote URL
+	git remote -v
+
+	# Change remote URL
+	git remote set-url origin git@github.com-intg-configuration:MITEM/intg-configuration.git
+	git remote set-url origin git@github.com-intg-core:MITEM/intg-core.git
+
