@@ -83,7 +83,7 @@ Docker says to use a container to [tar and un-tar](https://docs.docker.com/stora
 	transfer_image=ubuntu
 
 	set -x
-	docker volume create $from_vol
+	docker volume create $to_vol
 	docker run --rm -v $from_vol:/source --mount type=bind,source=$(pwd),target=/backup $transfer_image bash -c "tar cvf /backup/$to_vol.tar /source"
 	docker run --rm -v $to_vol:/dest --mount type=bind,source=$(pwd),target=/backup $transfer_image bash -c "cd /dest && tar xvf /backup/$to_vol.tar --strip 1"
 	rm $to_vol.tar
