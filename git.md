@@ -73,7 +73,9 @@ To provide system access to a repository not using personal ssh keys one option 
 		Hostname github.com
 		IdentityFile=/c/Users/Administrator/.ssh/is-set1-github-intg-core
 
-**3** Clone using the made-up host name (or change URL in existing repo):
+**3** Add the deployment keys to the repository.  CHOOSE WRITE ACCESS as needed.
+
+**4** Clone using the made-up host name (or change URL in existing repo):
 
 	# Show remote URL
 	git remote -v
@@ -82,3 +84,5 @@ To provide system access to a repository not using personal ssh keys one option 
 	git remote set-url origin git@github.com-intg-configuration:MITEM/intg-configuration.git
 	git remote set-url origin git@github.com-intg-core:MITEM/intg-core.git
 
+	# Confirm access
+	git remote show origin
