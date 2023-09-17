@@ -28,6 +28,17 @@ From the command line
 
 	sudo raspi-config
 
+## Disable IP V 6
+
+Sometimes IP V6 does not work.  See [instructions](https://www.howtoraspberry.com/2020/04/disable-ipv6-on-raspberry-pi/)
+
+Insert
+
+	net.ipv6.conf.all.disable_ipv6 = 1
+	net.ipv6.conf.default.disable_ipv6 = 1
+	net.ipv6.conf.lo.disable_ipv6 = 1
+
+Into `/etc/sysctl.d/50-disableipv6.conf`
 
 ## Visual Studio Code
 
