@@ -183,9 +183,8 @@ ASGI server implementations, like [Daphne](https://github.com/django/daphne), [H
 
 ## API
 
-[FastAPI](https://fastapi.tiangolo.com/) is the web framework that seems to have the most interest/noise around it.
-
-
 [Starlette](https://www.starlette.io/) Starlette is a lightweight ASGI framework/toolkit, which is ideal for building async web services in Python.
 
-[Starlite](https://starlite-api.github.io/starlite/) Starlite is a light, opinionated and flexible ASGI API framework built on top of pydantic and Starlette.
+[FastAPI](https://fastapi.tiangolo.com/) is the web framework that seems to have the most interest/noise around it.
+
+[LightStar](https://github.com/litestar-org/litestar) API framework.  Featured on Talk Python to Me.
