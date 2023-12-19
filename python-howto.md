@@ -74,6 +74,12 @@ On Debian, must install python3-dev
 
 # VS Code
 
+## Hinting and Linting in VS Code
+
+https://devblogs.microsoft.com/python/python-linting-video/?ocid=python_eml_tnp_autoid10_readmore
+
+
+
 ## PYTHONPATH
 
 This is more complex that it should be.  I often have one or two library directories that need to be 
@@ -172,6 +178,14 @@ The [requests](https://requests.readthedocs.io/en/latest/) is the standard for m
 [dogpile](https://dogpilecache.sqlalchemy.org/en/latest/) provide threaded caching, including managing updates.
 
 
+## Web frameworks
+
+Django
+
+Flask
+
+[Shiny for Python](https://shiny.posit.co/py/) Interactive web applications.
+
 ## Web Servers
 
 A web framework needs to be run by a web server:
@@ -188,3 +202,7 @@ ASGI server implementations, like [Daphne](https://github.com/django/daphne), [H
 [FastAPI](https://fastapi.tiangolo.com/) is the web framework that seems to have the most interest/noise around it.
 
 [LightStar](https://github.com/litestar-org/litestar) API framework.  Featured on Talk Python to Me.
+
+[msgpack](https://pypi.org/project/msgpack/) fast message serialization.  Used by LightStar.
+
+[
