@@ -30,6 +30,21 @@ Set up:  grant xrdp user access to ssl certificates then restart the server
 Show status
 
     sudo systemctl status xrdp
+
+# SUDO
+
+The preferred way to grant individual (or group) permissions would be to add files under /etc/sudoers.d
+
+This separates local changes from the default policy and saves time in case the distribution sudoers file changes.
+
+To make the currently logged in user a a sudoer and make sudo not prompt them for a password, use
+
+    echo "$USER ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/$USER
+    
+this will create a file called /etc/sudoers.d/$USER (where $USER is the username of the user that you were logged in as when you ran that command), making it clear which users are granted permission.
+
+
+
 # Docker
 
 Following instructions on [docker](https://docs.docker.com/engine/install/debian/)
