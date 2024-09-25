@@ -1,6 +1,9 @@
 # Kivi:  
 
-[OLD Installation](http://kivy.org/docs/installation/installation-rpi.html)
+Raspberry Pi OS Bookworm [install][https://kivy.org/doc/stable/installation/installation-rpi.html]
+
+
+Old install on Buster:
 
 [Updated Install](https://github.com/Lauszus/kivy/blob/45f7ec3851e09220b2b5dc8f34523d6eebff17c2/doc/sources/installation/installation-rpi.rst) for Pi 4 and Buster
 (github [issue](https://github.com/kivy/kivy/issues/6474) on difficulties with Buster).

@@ -89,13 +89,23 @@ Docker says to use a container to [tar and un-tar](https://docs.docker.com/stora
 	rm $to_vol.tar
 
 
-## Building
+# Building
 
 Build an image and give it a name and tag.
 
 
 	docker build -t tomunger/homesolargather:0.1.0 .
 
+# Cross Platform
+
+Docker on [Multi-platform images](https://docs.docker.com/build/building/multi-platform/)
+
+The easiest way to do this has been to enable containerd and use `buildx --platform`
+
+## containerd
+
+[containerd](https://docs.docker.com/desktop/containerd/) is an alternate image store with 
+more features than the "classic" image store.  This can be enabled in docker desktop (settings > general).  Doing so hides any images in the "classic" store
 
 List buildx platforms
 
