@@ -1,7 +1,13 @@
 # Kivi:  
 
-Raspberry Pi OS Bookworm [install][https://kivy.org/doc/stable/installation/installation-rpi.html]
+Raspberry Pi OS Bookworm [ganeral install](https://kivy.org/doc/stable/gettingstarted/installation.html#install-pip) 
+and [RPi specific](https://kivy.org/doc/stable/installation/installation-rpi.html)
 
+In summary:
+
+ 1. Maybe: Install dependencies.
+ 2. [`pip` install](https://kivy.org/doc/stable/gettingstarted/installation.html#setup-terminal-and-pip) of kivi
+ 3. Configure [input](https://kivy.org/doc/stable/installation/installation-rpi.html#using-official-rpi-touch-display) 
 
 Old install on Buster:
 
@@ -19,3 +25,9 @@ in ~/.kivy/config.ini make the input section:
 mouse = mouse
 mtdev_%(name)s = probesysfs,provider=mtdev
 hid_%(name)s = probesysfs,provider=hidinput
+
+If the line:
+
+    ; %(name)s = probesysfs
+
+is present, that will generate a duplicate event for every touch.  Comment that line out
