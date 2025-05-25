@@ -36,13 +36,14 @@ N - right panel
 ## Moving, Rotating, and Scaling
 
 - **g** : grab an object
-  - **X,Y,Z** : move only along this axis
+  - **x,y,x**: move only along this axis
 - **s** - Scale scale proportionally
-  - **X,Y,Z** : scale only along this axis
+  - **x,y,x**: scale only along this axis
+  - **shift x,y,z** : scale on the plane defined by the axis
   - alt S - scale evenly
   - shift S - fine calling(?)
 - **r** - Rotate an object
-  - **X,Y,Z** : rotate only around this axis
+  - **x,y,x**: rotate only around this axis
 
 - **Ctl-A** : "Apply" will apply the transformation, setting values to zero and making the new position the home position
 - **-something-** : "Clear" the transformation, returning to home position.

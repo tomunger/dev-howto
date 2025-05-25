@@ -1,13 +1,15 @@
-# Learning
+# Python HowTo
+
+## Learning
 
 [Chicago Python](https://www.chipy.org) has learning resources
 
 
-# Cheat Sheets
+## Cheat Sheets
 
 mypy [typing hints](https://mypy.readthedocs.io/en/latest/cheat_sheet_py3.html)
 
-# Formatting
+## Formatting
 
 For a long time I used tabs but the standard is spaces.  I surrender and am switching to spaces
 The following command will change all python files to space indentation
@@ -16,50 +18,23 @@ The following command will change all python files to space indentation
 
 
 
-# Python Version Management
+## Python Version Management
 
-## pyenv
+### uv
 
-`pyenv` has become my favored way to manage python on my personal computer and development systems.
-A little complex to set up, it then makes it easy to create, re-create, and swith environments.
+### hatch
 
-RealPython [instructions](https://realpython.com/intro-to-pyenv/).  Explains how to install.
+Hatch is python packaging authority tool.  
 
-See `.pyenv/README.md` for details on how to set up your shell
+### pyenv
 
-Update with
+abandoned for `uv` and `hatch`
 
-    cd $(pyenv root)
-    git pull
-
-### pyenv-virtualenv
-
-I use this for virtual environtments.
-
-See the github [repository](https://github.com/pyenv/pyenv-virtualenv)
-
-
-
-### Commands
-
-    # List local versions
-    pyenv versions
-
-    # List available verions
-    pyenv install --list
-
-    # Install CPythong version
-    pyenv install 3.9.7
-
-    
-
-
-
-# Tools
+## Tools
 
 Vulnerability testing:  Python safety checks?  Does this exist?
 
-# mypy
+## mypy
 
 Install the mypy VS Code extension
 
@@ -72,19 +47,18 @@ On Debian, must install python3-dev
 
     sudo apt install python3-dev
 
-# VS Code
+## VS Code
 
-## Hinting and Linting in VS Code
+### Hinting and Linting in VS Code
 
 https://devblogs.microsoft.com/python/python-linting-video/?ocid=python_eml_tnp_autoid10_readmore
 
 
 
-## PYTHONPATH
+#### PYTHONPATH
 
 This is more complex that it should be.  I often have one or two library directories that need to be 
 available on the path.
-
 
 `settings.json` will give you the path in terminals.  Since the debugger is run from a terminal, this is where the 
 debugger gets the path.
@@ -100,31 +74,29 @@ debugger gets the path.
 
     PYTHONPATH=lib
 
-
 Setting `python.analysis.extraPaths` tells pylance where to look for source code.
 
-# Profiling
+## Profiling
 
 [RunSnakeRun](http://www.vrplumber.com/programming/runsnakerun/) provide a GUI that allows you to view (Python) `cProfile` or `Profile` profiler dumps in a sortable GUI view.  
 
 [kcachegrind](https://github.com/KDE/kcachegrind) a KDE GUI display of profilers.
 
-# Message Queue
+## Message Queue
 
-## Libraries
+### MQ Libraries
  
- * [kombu](https://docs.celeryq.dev/projects/kombu/en/latest/index.html) provides a high level interface.
- * [amqp](https://pypi.org/project/amqp/) Pure python client alternate to librabbitmq.
- * [librabbitmq](https://pypi.org/project/librabbitmq/) High performance interface to librabbit.
+- [kombu](https://docs.celeryq.dev/projects/kombu/en/latest/index.html) provides a high level interface.
+- [amqp](https://pypi.org/project/amqp/) Pure python client alternate to librabbitmq.
+- [librabbitmq](https://pypi.org/project/librabbitmq/) High performance interface to librabbit.
 
-
-# Tasks
+## Tasks
 
 [Asynchronous Tasks With Django and Celery](https://realpython.com/asynchronous-tasks-with-django-and-celery/)
 
 includes how to use redis and how to use redis as the cellery broker and database back end.  How to use celery with django.
 
-# Frameworks / Libraries
+## Frameworks
 
 James Bennett's [asyncio blog post](https://www.b-list.org/weblog/2022/aug/16/async/) (8/2022) lists several frameworks.
 
@@ -136,12 +108,11 @@ James Bennett's [asyncio blog post](https://www.b-list.org/weblog/2022/aug/16/as
 than pydantic, which is data validation.
 
 
-### pydantic
+### ydantic
 
 [Pydantic module](https://pydantic-docs.helpmanual.io/) "provides data validation and settings management using pythong type annotations."
 
-
-## Database
+### Database
 
 Python as a DB API specification in [PEP249](https://peps.python.org/pep-0249/).  As I understand, database drives implement this interface and provide the interface to various database servers.  This is a low level interface.  In theory, I think, you can change database by importing a different DBAPI driver.
 
@@ -159,26 +130,24 @@ On top of DBAPI drivers, several higher level frameworks provide a more abstract
 
 *Why choose SQL Model over SQLAlchemy?*
 
-## Requests
+### Requests
 
 The [requests](https://requests.readthedocs.io/en/latest/) is the standard for making HTTP requests.  Requests recommends several packages:
 
- * [CacheControl](https://cachecontrol.readthedocs.io/en/latest/) caching
- * [Requests-Threads](https://github.com/requests/requests-threads) is a Requests session that returns the amazing Twisted’s awaitable Deferreds instead of Response objects. This allows the use of async/await keyword usage on Python 3, or Twisted’s style of programming, if desired.
- * [Requests-Toolbelt](https://github.com/requests/requests-threads) is a collection of utilities that some users of Requests may desire, but do not belong in Requests proper. 
- * [requests-oauthlib](https://requests-oauthlib.readthedocs.io/en/latest/) makes it possible to do the OAuth dance from Requests automatically. This is useful for the large number of websites that use OAuth to provide authentication. It also provides a lot of tweaks that handle ways that specific OAuth providers differ from the standard specifications.
+- [CacheControl](https://cachecontrol.readthedocs.io/en/latest/) caching
+- [Requests-Threads](https://github.com/requests/requests-threads) is a Requests session that returns the amazing Twisted’s awaitable Deferreds instead of Response objects. This allows the use of async/await keyword usage on Python 3, or Twisted’s style of programming, if desired.
+- [Requests-Toolbelt](https://github.com/requests/requests-threads) is a collection of utilities that some users of Requests may desire, but do not belong in Requests proper. 
+- [requests-oauthlib](https://requests-oauthlib.readthedocs.io/en/latest/) makes it possible to do the OAuth dance from Requests automatically. This is useful for the large number of websites that use OAuth to provide authentication. It also provides a lot of tweaks that handle ways that specific OAuth providers differ from the standard specifications.
 
-
- * Certifi is a carefully curated collection of Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts. It has been extracted from the Requests project.
+- Certifi is a carefully curated collection of Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts. It has been extracted from the Requests project.
 
 [HTTPX](https://www.python-httpx.org/) HTTPX is a fully featured HTTP client for Python 3, which provides sync and async APIs, and support for both HTTP/1.1 and HTTP/2.  Mostly a drop in replacement for requests.
 
-## Caching general
+### Caching general
 
 [dogpile](https://dogpilecache.sqlalchemy.org/en/latest/) provide threaded caching, including managing updates.
 
-
-## Web frameworks
+### Web frameworks
 
 Django
 
@@ -186,7 +155,7 @@ Flask
 
 [Shiny for Python](https://shiny.posit.co/py/) Interactive web applications.
 
-## Web Servers
+### Web Servers
 
 A web framework needs to be run by a web server:
 
@@ -194,8 +163,7 @@ A web framework needs to be run by a web server:
 
 ASGI server implementations, like [Daphne](https://github.com/django/daphne), [Hypercorn](https://gitlab.com/pgjones/hypercorn/), and [Uvicorn](https://www.uvicorn.org/).
 
-
-## API
+### API
 
 [Starlette](https://www.starlette.io/) Starlette is a lightweight ASGI framework/toolkit, which is ideal for building async web services in Python.
 
@@ -205,4 +173,3 @@ ASGI server implementations, like [Daphne](https://github.com/django/daphne), [H
 
 [msgpack](https://pypi.org/project/msgpack/) fast message serialization.  Used by LightStar.
 
-[
