@@ -108,7 +108,7 @@ James Bennett's [asyncio blog post](https://www.b-list.org/weblog/2022/aug/16/as
 than pydantic, which is data validation.
 
 
-### ydantic
+### pydantic
 
 [Pydantic module](https://pydantic-docs.helpmanual.io/) "provides data validation and settings management using pythong type annotations."
 
@@ -154,6 +154,8 @@ Django
 Flask
 
 [Shiny for Python](https://shiny.posit.co/py/) Interactive web applications.
+
+[nicegui](http://nicegui.io/) Web interface to your application.
 
 ### Web Servers
 
